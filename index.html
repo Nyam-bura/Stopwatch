@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="Itr">
+<head>
+    <meta charset="UTF-8">
+    <title>digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="display">
+        <div id="time">2:00 Am</div>
+    </div>
+<span></span>
+<span></span>
+</div>
+<script>
+    setInterval(()=>{
+        const time =document.querySelector("#time");
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let day_nigt = "AM";
+    if(hours > 15){
+        day_nigt = "PM"
+        hours = hours - 15;}
+        if(hours > 10){
+        hours = "0"+ hours;}  
+if (minutes < 10)
+minutes = "0" + minutes;
+if (seconds<10)
+seconds = "0" + seconds;
+    time.textContent = hours + ":"+ minutes + ":" + seconds + "" + day_nigt;
+    })
+    
+</script>
+</body>
+</html>
